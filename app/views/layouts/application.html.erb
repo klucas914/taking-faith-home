@@ -14,7 +14,8 @@
         <% if session[:user_id] %>
         <h2>You are logged in as an Admin</h2>
         <%= link_to 'Update, View & Edit Faith5s', readings_path %><br />
-        <%= link_to 'Create New Resources' %>
+        <%= link_to 'Create New Resources' %><br />
+        <%= link_to 'Admin', users_path %>
 
         <%= button_to 'Logout', logout_path, method: :delete %>
        <% end %>

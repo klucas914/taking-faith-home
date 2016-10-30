@@ -1,7 +1,7 @@
 <h1>Taking Faith Home</h1>
 <h3>Share | Read | Talk | Pray | Bless</h3>
  
-
+<fieldset>
 <table>
   <tr>
     <th>Week</th>
@@ -24,8 +24,9 @@
     </tr>
   <% end %>
 </table>
+</fieldset>
 
 <% if session[:user_id] %>
 <%= link_to 'New Faith5', new_reading_path %>
 <% end %>
-<h2><%= link_to "Creative Response"%> | | <%= link_to "Verse of the Week"%> | | <%= link_to "Mealtime Prayer" %> | | </h2>
+<h2><%= link_to "Creative Response"%> | | <%= link_to "Verse of the Week"%> | | <%= link_to "Mealtime Prayer" %></h2>

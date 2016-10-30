@@ -1,11 +1,11 @@
 <h1>Read</h1>
 
 <h2><%= @reading.title %></h2>
-
+<fieldset>
 <h3><%= @reading.verse %></h3>
 
 <p><%= @reading.scripture %></p>
-
+</fieldset>
 <%= link_to 'Next', talk_reading_path %><br />
 <%= link_to 'Back', share_reading_path %><br />
 <%= link_to 'Home', readings_path %>
