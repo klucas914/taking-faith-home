@@ -1,0 +1,42 @@
+<p>
+  <strong>Date:</strong>
+  <%= @reading.date %>
+</p>
+ 
+<p>
+  <strong>Week:</strong>
+  <%= @reading.week %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reading.title %>
+</p>
+
+<p>
+  <strong>Verse:</strong>
+  <%= @reading.verse %>
+</p>
+
+<p>
+  <strong>Scripture:</strong>
+  <%= @reading.scripture %>
+</p>
+
+<p>
+  <strong>Discussion Questions:</strong>
+  <%= @reading.discuss %>
+</p>
+
+<p>
+  <strong>Prayer Instructions:</strong>
+  <%= @reading.prayer %>
+</p>
+
+<p>
+  <strong>Blessing:</strong>
+  <%= @reading.blessing %>
+</p>
+
+<%= link_to 'Back', new_reading_path %><br />
+<%= link_to 'Home', readings_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  week: MyString
+  title: MyString
+  verse: MyString
+  scripture: MyText
+
+two:
+  date: MyString
+  week: MyString
+  title: MyString
+  verse: MyString
+  scripture: MyText
