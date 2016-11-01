@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029073200) do
+ActiveRecord::Schema.define(version: 20161101004645) do
 
   create_table "readings", force: :cascade do |t|
     t.string   "date"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20161029073200) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "weekly_resources", force: :cascade do |t|
+    t.text     "creative_response"
+    t.text     "memory_verse"
+    t.text     "mealtime_prayer"
+    t.text     "season_description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creative_response: MyText
+  memory_verse: MyText
+  mealtime_prayer: MyText
+  season_description: MyText
+
+two:
+  creative_response: MyText
+  memory_verse: MyText
+  mealtime_prayer: MyText
+  season_description: MyText

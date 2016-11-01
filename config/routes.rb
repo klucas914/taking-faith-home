@@ -28,6 +28,21 @@ Rails.application.routes.draw do
   		get :talk
   	end
   end
+  resources :weekly_resources do
+    member do
+      get :creative_response
+    end
+    member do
+      get :memory_verse
+    end
+    member do
+      get :mealtime_prayer
+    end
+    member do
+      get :season_description
+    end
+  end
+
   
 
   root 'readings#index'

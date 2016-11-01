@@ -1,0 +1,19 @@
+<p>
+<fieldset>
+<h1>Weekly Resources</h1>
+
+<fieldset>
+<table>
+   
+  <% @weekly_resources.each do |weekly_resource| %>
+    <tr><%= link_to 'Creative Response', creative_response_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><%= link_to 'Memory Verse', memory_verse_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><%= link_to 'Mealtime Prayer', mealtime_prayer_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><%= link_to 'Season Description', season_description_weekly_resource_path(weekly_resource) %></tr>
+  <% end %>  
+</table>
+</fieldset>
+<br>
+</fieldset>
+<br>
+<%= link_to 'Home', readings_path %>
