@@ -1,15 +1,27 @@
 <p>
 <fieldset>
 <h1>Weekly Resources</h1>
+<% if session[:user_id] %>
+<%= link_to 'Create New Weekly Resource', new_weekly_resource_path %>
+<% end %>
+<p>
 
 <fieldset>
 <table>
    
   <% @weekly_resources.each do |weekly_resource| %>
+    <tr><h2>Week of: <%= Time.now.strftime('%v') %></h2></tr>
     <tr><%= link_to 'Creative Response', creative_response_weekly_resource_path(weekly_resource) %></tr><br />
     <tr><%= link_to 'Memory Verse', memory_verse_weekly_resource_path(weekly_resource) %></tr><br />
     <tr><%= link_to 'Mealtime Prayer', mealtime_prayer_weekly_resource_path(weekly_resource) %></tr><br />
-    <tr><%= link_to 'Season Description', season_description_weekly_resource_path(weekly_resource) %></tr>
+    <tr><%= link_to 'Season Description', season_description_weekly_resource_path(weekly_resource) %></tr><br />
+    <% if session[:user_id] %>
+    <tr><%= link_to 'Edit', edit_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><%= link_to 'Destroy', weekly_resource_path(weekly_resource),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></tr>
+        <% end %>
+    <br />
   <% end %>  
 </table>
 </fieldset>
