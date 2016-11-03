@@ -6,13 +6,17 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: "utf-8"
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  encoding: "utf-8"
+  host:     "localhost"
+  port:     5432
+  database: devotional_dev
+  pool:     5
 
 
 # Warning: The database defined as "test" will be erased and
@@ -20,8 +24,18 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  encoding: "utf-8"
+  host:     "localhost"
+  port:     5432
+  database: devotional_test
+  pool:     5
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  encoding:           <%= ENV["DB_ENCODING"] || "utf-8"                       %>
+  host:               <%= ENV["DB_HOST"]                                      %>
+  port:               <%= ENV["DB_PORT"]                                      %>
+  database:           <%= ENV["DB_NAME"]                                      %>
+  username:           <%= ENV["DB_USERNAME"]                                  %>
+  password:           <%= ENV["DB_PASSWORD"]                                  %>
+  pool:               <%= ENV["DB_CONN_POOL"] || 20                           %>
+
