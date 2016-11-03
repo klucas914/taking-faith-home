@@ -2,10 +2,15 @@
 
 <p>
 <fieldset>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Day</th>
     <th>Title</th>
+    <th></th>
+    <% if session[:user_id] %>
+    <th></th>
+    <th></th>
+    <% end %>
   </tr>
  
   <% @readings.each do |reading| %>
