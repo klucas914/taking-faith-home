@@ -1,5 +1,6 @@
 <fieldset>
 <h3><%= link_to "It is the 23rd week after pentecost", weekly_resources_path %></h3>
+
 <p>
 <fieldset>
 <table>
@@ -23,6 +24,8 @@
   <% end %>
 </table>
 </fieldset>
+<h3><%= link_to "Weekly Resources", weekly_resources_path %></h3>
+
 </fieldset>
 <% if session[:user_id] %>
 <%= link_to 'New Faith5', new_reading_path %>
