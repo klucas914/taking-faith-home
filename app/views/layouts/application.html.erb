@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Devotional</title>
+    <title>Taking Faith Home</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body class="<%= controller.controller_name %>">
-    <div id="columns">
-      <div id="side">
-        <% if session[:user_id] %>
-        <h2>You are logged in as an Admin</h2>
-        <%= link_to 'Update Faith5s', readings_path %><br />
+    <div id="banner" class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <h1>Taking Faith Home</h1><p>Share | Read | Talk | Pray | Bless</p>
+        </div>
+        <div class="col-xs-8">
+        </div>
+      </div>
+      
+      <% if session[:user_id] %>
+      <div class="row">
+        <div class="col-xs-4">
+        <p>You are logged in as an Admin</p>
+        </div>
+        <div class="col-xs-2">
+         <%= link_to 'Update Faith5s', readings_path %><br />
+        </div>
+        <div class="col-xs-2">
         <%= link_to 'Update Weekly Resources', weekly_resources_path %><br />
-        <%= link_to 'View & Update Admins', users_path %>
+        </div>
+        <div class="col-xs-2">
+        <%= link_to 'Update Admins', users_path %>
+        </div>
+        <div class="col-xs-2">
+          <%= button_to 'Logout', logout_path, method: :delete %>
+        </div>   
+      </div>
+      <% end %>
+    </div>
 
-        <%= button_to 'Logout', logout_path, method: :delete %>
-       <% end %>
-      <br>
-      </div>
-      <div id="header">
-       <fieldset>
-        <h1>Taking Faith Home</h1>
-          <h3>Share | Read | Talk | Pray | Bless</h3>
-        </fieldset>
-      </div>
-      <div id="main">
-        <%= yield %>
-      </div>
+    <div id="main">  
+      <%= yield %>
     </div>
   </body>
 </html>
