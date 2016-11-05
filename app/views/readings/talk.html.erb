@@ -1,10 +1,12 @@
-<fieldset>
-<h1>Talk</h1>
+<p>
+<div class="container">
 
-<fieldset>
-<h2><%= @reading.discuss %></h2>
-</fieldset>
-</fieldset>
+<h3>Talk</h3>
+
+
+<p><%= @reading.discuss %></p>
+
 <%= link_to 'Next', pray_reading_path %><br />
 <%= link_to 'Back', read_reading_path %><br />
 <%= link_to 'Home', readings_path %>
+</div>

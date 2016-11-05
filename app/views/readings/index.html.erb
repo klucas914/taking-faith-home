@@ -1,21 +1,21 @@
-<div class="container">
+<p>
+<div class="container-fluid">
+
 <h2>This Week's Faith 5s</h2>
+
+<% if session[:user_id] %>
+<%= link_to 'New Faith5', new_reading_path %>
+<% end %>
+
 <table class="table table-striped">
-  <tr>
-    <th>Day</th>
-    <th>Title</th>
-    <th></th>
-    <% if session[:user_id] %>
-    <th></th>
-    <th></th>
-    <% end %>
-  </tr>
  
   <% @readings.each do |reading| %>
     <tr>
       <td><%= reading.date %></td>
-      <td><%= reading.title %></td>
-      <td><%= link_to 'Begin Faith 5', share_reading_path(reading) %></td>
+      <td><div class="list-group">
+       <a href="<%=share_reading_path(reading)%>" class="list-group-item list-group-item-action"><%= reading.title %></a>
+      </div>
+      </td>
       <% if session[:user_id] %>
       <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
       <td><%= link_to 'Destroy', reading_path(reading),
@@ -24,11 +24,14 @@
       <% end %>
     </tr>
   <% end %>
+  </div>
 </table>
-
-<h3><%= link_to "Weekly Resources", weekly_resources_path %></h3>
-
-<% if session[:user_id] %>
-<%= link_to 'New Faith5', new_reading_path %>
-<% end %>
 </div>
+
+
+<div class="card card-block">
+  <h4 class="card-title">Weekly Resources</h4>
+    <p class="card-text">Enhance your daily spiritual practice with creative responses, memory verses, mealtime prayers, and more! </p>
+      <a href="<%= weekly_resources_path %>" class="btn btn-primary">More</a>
+</div>
+

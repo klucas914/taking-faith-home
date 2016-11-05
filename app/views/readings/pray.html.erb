@@ -1,10 +1,10 @@
-<fieldset>
-<h1>Pray</h1>
+<p>
+<div class="container-fluid">
+<h3>Pray</h3>
 
-<fieldset>
-<h2><%= @reading.prayer %></h2>
-</fieldset>
-</fieldset>
+<p><%= @reading.prayer %></p>
+
 <%= link_to 'Next', bless_reading_path %><br />
 <%= link_to 'Back', talk_reading_path %><br />
 <%= link_to 'Home', readings_path %>
+</div>

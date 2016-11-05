@@ -1,13 +1,15 @@
-<fieldset>
-<h1>Read</h1>
+<p>
+<div class="container">
 
-<h2><%= @reading.title %></h2>
-<fieldset>
-<h3><%= @reading.verse %></h3>
+<h3>Read</h3>
+
+<h4><%= @reading.title %></h4>
+
+<p><strong><%= @reading.verse %></strong></p>
 
 <p><%= @reading.scripture %></p>
-</fieldset>
-</fieldset>
+
 <%= link_to 'Next', talk_reading_path %><br />
 <%= link_to 'Back', share_reading_path %><br />
 <%= link_to 'Home', readings_path %>
+</div>

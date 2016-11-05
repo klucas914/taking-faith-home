@@ -1,26 +1,27 @@
-<div class="container">
+<p>
+<div class="container-fluid">
 <h2>Weekly Resources</h2>
 
 <% if session[:user_id] %>
 <%= link_to 'Create New Weekly Resource', new_weekly_resource_path %>
 <% end %>
-
-<table class="table">
+<p>
+<div class="list-group">
+  <table class="table">
    
   <% @weekly_resources.each do |weekly_resource| %>
-    <tr><p>Week of: <%= Time.now.strftime('%v') %></p></tr>
-    <tr><%= link_to 'Creative Response', creative_response_weekly_resource_path(weekly_resource) %></tr><br />
-    <tr><%= link_to 'Memory Verse', memory_verse_weekly_resource_path(weekly_resource) %></tr><br />
-    <tr><%= link_to 'Mealtime Prayer', mealtime_prayer_weekly_resource_path(weekly_resource) %></tr><br />
-    <tr><%= link_to 'Season Description', season_description_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><a href="<%= creative_response_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Creative Response</a></tr>
+    <tr><a href="<%= memory_verse_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Memory Verse</a></tr>
+    <tr><a href="<%= mealtime_prayer_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Mealtime Prayer</a></tr>
+    <tr><a href="<%= season_description_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Current Church Year Season</a></tr>
     <% if session[:user_id] %>
     <tr><%= link_to 'Edit', edit_weekly_resource_path(weekly_resource) %></tr><br />
     <tr><%= link_to 'Destroy', weekly_resource_path(weekly_resource),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></tr>
-        <% end %>
-    <br />
+    <% end %>
   <% end %>  
 </table>
-<%= link_to 'Home', readings_path %>
+</div>
+<%= link_to 'Back', readings_path %>
 </div>

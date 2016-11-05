@@ -1,19 +1,21 @@
 <% if flash[:alert] %>
   <p id="notice"><%= flash[:alert] %></p>
 <% end %>
+
 <div class="container">
-<%= form_tag do %>
-    <legend>Please Log In</legend>
-    <div>
+  <%= form_tag do %>
+      <legend>Please Log In</legend>
+      <div>
       <%= label_tag :name, 'Name:' %>
       <%= text_field_tag :name, params[:name] %>
-     </div>
-     <div>
+      </div>
+      <div>
        <%= label_tag :password, 'Password:' %>
        <%= password_field_tag :password, params[:password] %>
-     </div>
-     <div>
+       </div>
+       <div>
        <%= submit_tag "Login" %>
-     </div>
-<% end %>
+       </div>
+  <% end %>
+ <%= link_to "Back", readings_path %>
 </div>
