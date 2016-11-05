@@ -1,7 +1,5 @@
-<fieldset>
-
-<p>
-<fieldset>
+<div class="container">
+<h2>This Week's Faith 5s</h2>
 <table class="table table-striped">
   <tr>
     <th>Day</th>
@@ -27,11 +25,10 @@
     </tr>
   <% end %>
 </table>
-</fieldset>
+
 <h3><%= link_to "Weekly Resources", weekly_resources_path %></h3>
 
-</fieldset>
 <% if session[:user_id] %>
 <%= link_to 'New Faith5', new_reading_path %>
 <% end %>
-
+</div>

@@ -15,3 +15,28 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap";
 
+#columns {
+	background: 141;
+  
+    #main {
+      margin-left: 17em;
+      padding: 1em;
+      background: white;
+    }
+
+    #side {
+      float: left;
+      padding: 1em 2em;
+      width: 15em;
+      background: white;
+    
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+        }
+      }
+    }
+
+
+}

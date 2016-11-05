@@ -1,15 +1,14 @@
-<fieldset>
-<h1>Weekly Resources</h1>
+<div class="container">
+<h2>Weekly Resources</h2>
+
 <% if session[:user_id] %>
 <%= link_to 'Create New Weekly Resource', new_weekly_resource_path %>
 <% end %>
-<p>
 
-<fieldset>
 <table class="table">
    
   <% @weekly_resources.each do |weekly_resource| %>
-    <tr><h2>Week of: <%= Time.now.strftime('%v') %></h2></tr>
+    <tr><p>Week of: <%= Time.now.strftime('%v') %></p></tr>
     <tr><%= link_to 'Creative Response', creative_response_weekly_resource_path(weekly_resource) %></tr><br />
     <tr><%= link_to 'Memory Verse', memory_verse_weekly_resource_path(weekly_resource) %></tr><br />
     <tr><%= link_to 'Mealtime Prayer', mealtime_prayer_weekly_resource_path(weekly_resource) %></tr><br />
@@ -23,8 +22,5 @@
     <br />
   <% end %>  
 </table>
-</fieldset>
-<br>
-</fieldset>
-<br>
 <%= link_to 'Home', readings_path %>
+</div>

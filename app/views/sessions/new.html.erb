@@ -1,9 +1,8 @@
 <% if flash[:alert] %>
   <p id="notice"><%= flash[:alert] %></p>
 <% end %>
-
+<div class="container">
 <%= form_tag do %>
-  <fieldset>
     <legend>Please Log In</legend>
     <div>
       <%= label_tag :name, 'Name:' %>
@@ -16,5 +15,5 @@
      <div>
        <%= submit_tag "Login" %>
      </div>
-  </fieldset>
 <% end %>
+</div>
