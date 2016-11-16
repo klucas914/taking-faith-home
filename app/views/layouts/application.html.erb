@@ -9,33 +9,33 @@
   </head>
   
   <body class="<%= controller.controller_name %>">
-    <nav class="navbar navbar-light bg-faded">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">☰</button>
-        <div class="collapse navbar-toggleable-xs" id="nav-content">
-           <a class="navbar-brand" href="#"><h1>Taking Faith Home</h1><p>Share | Read | Talk | Pray | Bless</p></a>
-           <ul class="nav navbar-nav">
-            <% if session[:user_id] %>
-            <li class="nav-item">
-               <a class="nav-link" href="<%= readings_path %>">Update Faith 5s</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="<%= weekly_resources_path %>">Update Weekly Resources</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="<%= users_path %>">Update Admins</a>
-            </li>
-            <li class="nav-item">
-               <%= button_to "Logout", logout_path, method: :delete %>
-            </li>
-            <% else %>
+    
+    <nav class="navbar navbar-dark bg-inverse">
+      <ul class="nav navbar-nav">
+       <% if session[:user_id] %> 
+       <li class="nav-item">
+          <a class="nav-link" href="<%= users_path %>">Update Admins</a>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete %>
+        </li>
+        <% else %>
             <li class="nav-item">
                <a class="nav-link" href="<%= login_path %>">Admin Login</a>
             </li>
+        <% end %>
+      </ul>
+    </nav>
 
-            <% end %>
-           </ul>
-        </div>
-    </nav>  
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1>Taking Faith Home</h1>
+          <p>Share | Read | Talk | Pray | Bless</p>
+      </div>
+    </div>
+
+    
+    
     <div id="main">  
       <%= yield %>
     </div>

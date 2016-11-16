@@ -1,13 +1,14 @@
 <p>
 <div class="container-fluid">
-
-<h2>This Week's Faith 5s</h2>
-
+<p>
 <% if session[:user_id] %>
 <%= link_to 'New Faith5', new_reading_path %>
 <% end %>
 
-<table class="table table-striped">
+<div class="card card-block">
+  <h2 class="card-title">Faith 5s</h2>
+
+  <table class="table table-striped">
  
   <% @readings.each do |reading| %>
     <tr>
@@ -29,9 +30,15 @@
 </div>
 
 
-<div class="card card-block">
-  <h4 class="card-title">Weekly Resources</h4>
-    <p class="card-text">Enhance your daily spiritual practice with creative responses, memory verses, mealtime prayers, and more! </p>
-      <a href="<%= weekly_resources_path %>" class="btn btn-primary">More</a>
-</div>
+  <div class="card card-block">
+    <h4 class="card-title">Weekly Resources</h4>
+      <p class="card-text">Enhance your daily spiritual practice with creative responses, memory verses, mealtime prayers, and more! </p>
+        <a href="<%= weekly_resources_path %>" class="btn btn-success">Creative Response</a>
+        <a href="<%= weekly_resources_path %>" class="btn btn-success">Mealtime Prayer</a>
+        <a href="<%= weekly_resources_path %>" class="btn btn-success">Memory Verse</a>
+        <a href="<%= weekly_resources_path %>" class="btn btn-success">Church Season</a>
+ </div>
 
+
+
+</div>

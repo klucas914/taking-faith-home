@@ -1,10 +1,10 @@
 <p>
-<div class="container-fluid">
+<div class="container">
 <h3>Pray</h3>
 
 <p><%= @reading.prayer %></p>
 
+<%= link_to 'Back', talk_reading_path %>  |
+<%= link_to 'Home', readings_path %>  | 
 <%= link_to 'Next', bless_reading_path %><br />
-<%= link_to 'Back', talk_reading_path %><br />
-<%= link_to 'Home', readings_path %>
 </div>
