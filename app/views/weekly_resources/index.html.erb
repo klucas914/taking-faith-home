@@ -1,27 +1,65 @@
 <p>
 <div class="container-fluid">
-<h2>Weekly Resources</h2>
+ <div class="card card-block">
+    <h2 class="card-title">Weekly Resources</h2>
 
 <% if session[:user_id] %>
 <%= link_to 'Create New Weekly Resource', new_weekly_resource_path %>
 <% end %>
 <p>
 <div class="list-group">
-  <table class="table">
+  
    
   <% @weekly_resources.each do |weekly_resource| %>
-    <tr><a href="<%= creative_response_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Creative Response</a></tr>
-    <tr><a href="<%= memory_verse_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Memory Verse</a></tr>
-    <tr><a href="<%= mealtime_prayer_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Mealtime Prayer</a></tr>
-    <tr><a href="<%= season_description_weekly_resource_path(weekly_resource) %>" class="list-group-item list-group-item-action">Current Church Year Season</a></tr>
+    
+<div class="container-fluid">
+    <div class="card card-inverse card-danger" style="max-width: 20rem;">
+      <div class="card-block">
+        <h4 class="card-title">Creative Response</h4>
+          <p class="card-text"><%= weekly_resource.creative_response %></p>
+<!-- Links -->
+      </div>
+    </div>
+    <div class="card card-inverse card-danger" style="max-width: 20rem;">
+      <div class="card-block">
+        <h4 class="card-title">Memory Verse</h4>
+          <p class="card-text"><%= weekly_resource.memory_verse %></p>
+<!-- Links -->
+      </div>
+    </div>
+
+
+  
+    <div class="card card-inverse card-danger" style="max-width: 20rem;">
+      <div class="card-block">
+        <h4 class="card-title">Mealtime Prayer</h4>
+          <p class="card-text"><%= weekly_resource.mealtime_prayer %></p>
+<!-- Links -->
+      </div>
+    </div>
+
+  
+    <div class="card card-inverse card-danger" style="max-width: 20rem;">
+      <div class="card-block">
+        <h4 class="card-title">Church Season</h4>
+          <p class="card-text"><%= weekly_resource.season_description %></p>
+<!-- Links -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <%= link_to 'Back', readings_path %>  |
     <% if session[:user_id] %>
-    <tr><%= link_to 'Edit', edit_weekly_resource_path(weekly_resource) %></tr><br />
+    <tr><%= link_to 'Edit', edit_weekly_resource_path(weekly_resource) %></tr>  |
     <tr><%= link_to 'Destroy', weekly_resource_path(weekly_resource),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></tr>
     <% end %>
   <% end %>  
-</table>
+
 </div>
-<%= link_to 'Back', readings_path %>
+
+</div>
 </div>

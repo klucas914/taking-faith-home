@@ -5,10 +5,10 @@
 <%= link_to 'New Faith5', new_reading_path %>
 <% end %>
 
-<div class="card card-block">
+<div class="card card-block card-inverse card-success">
   <h2 class="card-title">Faith 5s</h2>
 
-  <table class="table table-striped">
+  <table class="table table-inverse table-striped">
  
   <% @readings.each do |reading| %>
     <tr>
@@ -30,13 +30,10 @@
 </div>
 
 
-  <div class="card card-block">
+  <div class="card card-block card-inverse card-primary">
     <h4 class="card-title">Weekly Resources</h4>
       <p class="card-text">Enhance your daily spiritual practice with creative responses, memory verses, mealtime prayers, and more! </p>
-        <a href="<%= weekly_resources_path %>" class="btn btn-success">Creative Response</a>
-        <a href="<%= weekly_resources_path %>" class="btn btn-success">Mealtime Prayer</a>
-        <a href="<%= weekly_resources_path %>" class="btn btn-success">Memory Verse</a>
-        <a href="<%= weekly_resources_path %>" class="btn btn-success">Church Season</a>
+        <a href="<%= weekly_resources_path %>" class="btn btn-success">Go</a>
  </div>
 
 

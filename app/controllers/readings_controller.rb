@@ -3,6 +3,7 @@ class ReadingsController < ApplicationController
 
   def index
     @readings = Reading.all
+    
   end
 
   def show
@@ -65,6 +66,6 @@ class ReadingsController < ApplicationController
 
   private
   def reading_params
-    params.require(:reading).permit(:date, :week, :title, :verse, :scripture, :discuss, :prayer, :blessing)
+    params.require(:reading).permit(:date, :week, :title, :verse, :scripture, :discuss, :prayer, :blessing, weekly_resources: [:creative_response, :mealtime_prayer, :memory_verse, :season_description])
   end
 end
