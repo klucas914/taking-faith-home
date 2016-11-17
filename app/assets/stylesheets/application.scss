@@ -15,6 +15,24 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap";
 
+.jumbotron {
+  background-color: #154360;
+  color: #7FB3D5;
+}
+
+.list-group-item-action {
+  background-color: #A9DFBF;
+}
+
+.card {
+  background-color: #FFFFFF;
+}
+
+body {
+  background-color: #D3D3D3;
+}
+
+
 #columns {
 	background: 141;
   

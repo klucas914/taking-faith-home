@@ -1,0 +1,8 @@
+SCSS
+
+$color-1: #2980b9; blue
+$color-2: #82e0aa;  green
+$color-3: #DAF7A6;  light yellow
+$color-4: #FFC300;  dark yellow/gold
+$color-5: #FF5733;  dark orange
+$color-6: #C70039;  dark red
